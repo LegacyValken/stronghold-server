@@ -23,6 +23,7 @@ GM.Website 	= "roaringcow.com"
 GM.Version	= "2.04" 
 
 -- Oh neat garry added this back after removing it and refusing to add it back
+-- Test edit
 function GM:GetGameDescription() return self.Name end
 
 -- --------------------------------------------------------------------------------------------------------------
