@@ -20,75 +20,103 @@ GM.Name 	= "F2S: Stronghold"
 GM.Author 	= "RoaringCow/TehBigA"
 GM.Email 	= "roaringcow@gmail.com"
 GM.Website 	= "roaringcow.com"
-GM.Version	= "2.04" 
+GM.Version	= "2.06" 
 
 -- Oh neat garry added this back after removing it and refusing to add it back
--- Test edit
 function GM:GetGameDescription() return self.Name end
 
 -- --------------------------------------------------------------------------------------------------------------
 
 GM.PrimaryWeapons = {}
-GM.PrimaryWeapons["weapon_sh_ak47"] =        { type="ar2", name="AK-47", price=419.99, model="models/weapons/w_rif_ak47.mdl", fov=20, offset=Vector(-50,-2,-20) }
-GM.PrimaryWeapons["weapon_sh_aug"] =         { type="ar2", name="AUG-A1", price=1199.99, model="models/weapons/w_rif_aug.mdl", fov=20, offset=Vector(-50,3,-20) }
-GM.PrimaryWeapons["weapon_sh_galil"] =       { type="ar2", name="Galil SAR", price=599.99, model="models/weapons/w_rif_galil.mdl", fov=20, offset=Vector(-50,-1,-20) }
-GM.PrimaryWeapons["weapon_sh_m4a2"] =        { type="ar2", name="M4A2", price=699.99, model="models/weapons/w_rif_m4a1.mdl", fov=20, offset=Vector(-50,0,-20) }
-GM.PrimaryWeapons["weapon_sh_sg552"] =       { type="ar2", name="SG-552", price=1269.99, model="models/weapons/w_rif_sg552.mdl", fov=20, offset=Vector(-50,2,-20) }
-GM.PrimaryWeapons["weapon_sh_pumpshotgun"] = { type="buckshot", name="M3 Super 90", price=249.99, model="models/weapons/w_shot_m3super90.mdl", fov=20, offset=Vector(-50,0,-20) }
-GM.PrimaryWeapons["weapon_sh_xm1014"] =      { type="buckshot", name="XM1014", price=619.99, model="models/weapons/w_shot_xm1014.mdl", fov=20, offset=Vector(-50,-2,-20) }
-GM.PrimaryWeapons["weapon_sh_mp5a4"] =       { type="smg1", name="MP-5A5", price=0, model="models/weapons/w_smg_mp5.mdl", fov=20, offset=Vector(-50,-2,-20) }
-GM.PrimaryWeapons["weapon_sh_p90"] =         { type="smg1", name="P90", price=1099.99, model="models/weapons/w_smg_p90.mdl", fov=20, offset=Vector(-50,-2,-20) }
-GM.PrimaryWeapons["weapon_sh_ump_45"] =      { type="smg1", name="UMP-45", price=1199.99, model="models/weapons/w_smg_ump45.mdl", fov=20, offset=Vector(-50,0,-20) }
-GM.PrimaryWeapons["weapon_sh_awp"] =         { type="ar2", name="L96", price=2499.99, model="models/weapons/w_snip_awp.mdl", fov=20, offset=Vector(-50,-2,-20) }
-GM.PrimaryWeapons["weapon_sh_g3sg1"] =       { type="ar2", name="G3SG1", price=1099.99, model="models/weapons/w_snip_g3sg1.mdl", fov=20, offset=Vector(-50,0,-20) }
-GM.PrimaryWeapons["weapon_sh_m249"] =        { type="ar2", name="M249 SAW", price=1699.99, model="models/weapons/w_mach_m249para.mdl", fov=20, offset=Vector(-50,-2,-20) }
-GM.PrimaryWeapons["weapon_sh_rpg"] =         { type="rpg_round", name="RPG", price=1999.99, model="models/weapons/w_rocket_launcher.mdl", fov=20, offset=Vector(-60,-13,-25) }
-GM.PrimaryWeapons["weapon_sh_hacker"] =      { type="battery", name="GIBSON PENETRATOR", price=949.95, model="models/weapons/w_physics.mdl", fov=20, offset=Vector(-50,-4,-20) }
-GM.PrimaryWeapons["weapon_sh_bountyscanner"]={ type="battery", name="GIBSON SCANNER", price=899.9, model="models/weapons/w_irifle.mdl", fov=20, offset=Vector(-40,0,-20), ang=Angle(0,180,0) }
-GM.PrimaryWeapons["weapon_sh_jetpack"] =     { type="battery", name="Jump Pack", price=1337.66, model="models/thrusters/jetpack.mdl", fov=20, offset=Vector(-45,0,-20), ang=Angle(0,0,0) }
+-- Assault Rifles
+GM.PrimaryWeapons["weapon_sh_ak47"] =        { type="ar2", name="AK-47", price=1300, model="models/weapons/w_rif_ak47.mdl", fov=20, offset=Vector(-50,-2,-20) }
+GM.PrimaryWeapons["weapon_sh_galil"] =       { type="ar2", name="Galil-SAR", price=1000, model="models/weapons/w_rif_galil.mdl", fov=20, offset=Vector(-50,-1,-20) }
+GM.PrimaryWeapons["weapon_sh_m4a2"] =        { type="ar2", name="M4A1", price=1000, model="models/weapons/w_rif_m4a1.mdl", fov=20, offset=Vector(-50,0,-20) }
+GM.PrimaryWeapons["weapon_sh_sg552"] =       { type="ar2", name="SG-552", price=1200, model="models/weapons/w_rif_sg552.mdl", fov=20, offset=Vector(-50,2,-20) }
+GM.PrimaryWeapons["weapon_sh_m249"] =        { type="ar2", name="M249", price=1800, model="models/weapons/w_mach_m249para.mdl", fov=20, offset=Vector(-50,-2,-20) }
+GM.PrimaryWeapons["weapon_sh_famas"] =      {type="ar2", name="Famas", price=900, model="models/weapons/w_rif_famas.mdl", fov=15, offset=Vector(-70,3.5,-30), ang=Angle(0,0,0) }
+GM.PrimaryWeapons["weapon_sh_ar2"] =        {type="ar2", name="AR2", price=1250, model="models/weapons/w_irifle.mdl", fov=70, offset=Vector(5,-4,2), ang=Angle(0, -160, 20) }
+
+-- Sniper
+GM.PrimaryWeapons["weapon_sh_awp"] =         { type="ar2", name="AWP L96", price=2500, model="models/weapons/w_snip_awp.mdl", fov=20, offset=Vector(-50,-2,-20) }
+GM.PrimaryWeapons["weapon_sh_scout"] =       { type="ar2", name="Scout", price=1000, model="models/weapons/w_snip_scout.mdl", fov=20, offset=Vector(-50,-3,-20) }
+GM.PrimaryWeapons["weapon_sh_g3sg1"] =       { type="ar2", name="G3-SG1", price=1200, model="models/weapons/w_snip_g3sg1.mdl", fov=20, offset=Vector(-50,0,-20) }
+GM.PrimaryWeapons["weapon_sh_sg550"] =       { type="ar2", name="SG-550", price=1500.0, model="models/weapons/w_snip_sg550.mdl", fov=20, offset=Vector(-50, -2, -20) }
+
+-- SMG
+GM.PrimaryWeapons["weapon_sh_aug"] =         { type="ar2", name="AUG-A1", price=800, model="models/weapons/w_rif_aug.mdl", fov=20, offset=Vector(-50,3,-20) }
+GM.PrimaryWeapons["weapon_sh_mp5a4"] =       { type="smg1", name="MP5-A5", price=0, model="models/weapons/w_smg_mp5.mdl", fov=20, offset=Vector(-50,-2,-20) }
+GM.PrimaryWeapons["weapon_sh_ump_45"] =      { type="smg1", name="UMP-45", price=900, model="models/weapons/w_smg_ump45.mdl", fov=20, offset=Vector(-50,0,-20) }
+
+-- Shotguns
+GM.PrimaryWeapons["weapon_sh_pumpshotgun"] = { type="buckshot", name="Pump M3 Shotgun", price=600, model="models/weapons/w_shot_m3super90.mdl", fov=20, offset=Vector(-50,0,-20) }
+GM.PrimaryWeapons["weapon_sh_xm1014"] =      { type="buckshot", name="Auto M4 Shotgun", price=900, model="models/weapons/w_shot_xm1014.mdl", fov=20, offset=Vector(-50,-2,-20) }
+GM.PrimaryWeapons["weapon_sh_spas12"] =     { type="buckshot", name="Auto Spas-12 Shotgun", price=900, model="models/weapons/w_shotgun.mdl", fov=70, offset=Vector(5,-4,2), ang=Angle(0, -160, 20) }
+
+-- Other Items
+GM.PrimaryWeapons["weapon_sh_rpg"] =         { type="rpg_round", name="Rocket Launcher", price=2000, model="models/weapons/w_rocket_launcher.mdl", fov=20, offset=Vector(-60,-13,-25) }
+GM.PrimaryWeapons["weapon_sh_bountyscanner"]={ type="battery", name="Bounty Hunter", price=750, model="models/weapons/w_irifle.mdl", fov=20, offset=Vector(-40,0,-20), ang=Angle(0,180,0) }
+GM.PrimaryWeapons["weapon_sh_hacker"]=      { type="battery", name="Door Hacker", price=750, model="models/weapons/w_irifle.mdl", fov=20, offset=Vector(-40,0,-20), ang=Angle(0,180,0) }
+GM.PrimaryWeapons["weapon_sh_cannon"]= 		{type="rpg_round", name="Cannon", price=1000000, model="models/weapons/w_rocket_launcher.mdl", fov=20, offset=Vector(-40,0,-20)}
 
 GM.SecondaryWeapons = {}
-GM.SecondaryWeapons["weapon_sh_deagle"] =       { type="pistol", name="Desert Eagle .44", price=1099.99, model="models/weapons/w_pist_deagle.mdl",offset=Vector(10,-3,2), fov=40 }
-GM.SecondaryWeapons["weapon_sh_deagle50"] =     { type="pistol", name="Desert Eagle .50", price=1399.99, model="models/weapons/w_pist_deagle.mdl",offset=Vector(10,-3,2), fov=40 }
-GM.SecondaryWeapons["weapon_sh_usp"] =          { type="pistol", name="USP .45", price=599.99, model="models/weapons/w_pist_usp.mdl",offset=Vector(10,-3,2), fov=40 }
-GM.SecondaryWeapons["weapon_sh_five-seven"] =   { type="pistol", name="Five-Seven", price=399.99, model="models/weapons/w_pist_fiveseven.mdl",offset=Vector(10,-3,2), fov=40 }
-GM.SecondaryWeapons["weapon_sh_glock18"] =      { type="pistol", name="G18", price=999.99, model="models/weapons/w_pist_glock18.mdl",offset=Vector(10,-3,2), fov=40 }
+-- Secondaries
+
+-- Pistols
+GM.SecondaryWeapons["weapon_sh_deagle"] =     { type="pistol", name="D.Eagle", price=1400, model="models/weapons/w_pist_deagle.mdl",offset=Vector(10,-3,2), fov=40 }
+GM.SecondaryWeapons["weapon_sh_revolver"] =     { type="pistol", name="Revolver 357", price=1500, model="models/weapons/w_357.mdl", offset=Vector(5,-4,0), fov=40 }
+GM.SecondaryWeapons["weapon_sh_usp9mm"] =       { type="pistol", name="USP .9MM", price =500, model="models/weapons/w_pistol.mdl", offset=Vector(10,-1,3), fov=50 }
+GM.SecondaryWeapons["weapon_sh_usp"] =          { type="pistol", name="USP .45", price=800, model="models/weapons/w_pist_usp.mdl",offset=Vector(10,-3,2), fov=40 }
+GM.SecondaryWeapons["weapon_sh_five-seven"] =   { type="pistol", name="Five-Seven", price=500, model="models/weapons/w_pist_fiveseven.mdl",offset=Vector(10,-3,2), fov=40 }
+GM.SecondaryWeapons["weapon_sh_glock18"] =      { type="pistol", name="Glock 18", price=400, model="models/weapons/w_pist_glock18.mdl",offset=Vector(10,-3,2), fov=40 }
 GM.SecondaryWeapons["weapon_sh_p228"] =         { type="pistol", name="P228", price=0, model="models/weapons/w_pist_p228.mdl",offset=Vector(10,-3,2), fov=40 }
-GM.SecondaryWeapons["weapon_sh_tmp"] =          { type="smg1", name="TMP", price=1599.99, model="models/weapons/w_smg_tmp.mdl", auto=true,offset=Vector(-10,-5,-5), fov=30 }
-GM.SecondaryWeapons["weapon_sh_mac10-45"] =     { type="smg1", name="MAC-10 .45", price=1699.99, model="models/weapons/w_smg_mac10.mdl", auto=true,offset=Vector(-10,-2,-7), fov=30 }
-GM.SecondaryWeapons["weapon_sh_mac11-380"] =    { type="smg1", name="MAC-11 .380", price=1299.99, model="models/weapons/w_smg_mac10.mdl", auto=true,offset=Vector(-10,-2,-7), fov=30 }
-GM.SecondaryWeapons["weapon_sh_pumpshotgun2"] = { type="buckshot", name="M3 Super 90", price=249.99, model="models/weapons/w_shot_m3super90.mdl", fov=20, offset=Vector(-50,0,-20) }
-GM.SecondaryWeapons["weapon_sh_scout"] =       	{ type="ar2", name="SCOUT", price=999.99, model="models/weapons/w_snip_scout.mdl", fov=20, offset=Vector(-50,-3,-20) }
+
+-- SMG
+GM.SecondaryWeapons["weapon_sh_tmp"] =          { type="smg1", name="TMP", price=1200, model="models/weapons/w_smg_tmp.mdl", auto=true,offset=Vector(-10,-5,-5), fov=30 }
+GM.SecondaryWeapons["weapon_sh_mac11-380"] =     { type="smg1", name="MAC-10", price=1000, model="models/weapons/w_smg_mac10.mdl", auto=true,offset=Vector(-10,-2,-7), fov=30 }
+GM.SecondaryWeapons["weapon_sh_smg1"] =       { type="smg1", name="MP7", price=800, model="models/weapons/w_smg1.mdl", fov=70, offset=Vector(5,-4,2), ang=Angle(0, -160, 20) }
+GM.SecondaryWeapons["weapon_sh_p90"] =         { type="smg1", name="P90", price=750, model="models/weapons/w_smg_p90.mdl", fov=20, offset=Vector(-50,-2,-20) }
+
+-- Shotguns
+GM.SecondaryWeapons["weapon_sh_pumpshotgun2"] = { type="buckshot", name="Pump M3 Shotgun", price=600, model="models/weapons/w_shot_m3super90.mdl", fov=20, offset=Vector(-50,0,-20) }
+
+-- Other
+GM.SecondaryWeapons["weapon_sh_crowbar"] =      { type="battery", name="Crowbar", price=500, model="models/weapons/w_crowbar.mdl", fov=20, ang=Angle(-30,145,0),offset=Vector(-40,-2,-20) }
 
 GM.WeaponAttachments = {
 	["suppressor"] = {
-		printname = "Suppressor",
-		cost = 799.99,
+		printname = "Silencer",
+		cost = 250,
 		type = "muzzle",
 	},
 	["m145"] = {
-		printname = "M145",
-		cost = 1249.99,
+		printname = "Acough",
+		cost = 1000,
 		type = "optics",
 	},
 	["rds"] = {
-		printname = "Reflex Sight",
-		cost = 289.99,
+		printname = "Dot Sight",
+		cost = 500,
 		type = "optics",
 	},
 	["scope"] = {
-		printname = "Scope",
-		cost = 1299.99,
+		printname = "Ranger Scope",
+		cost = 1250,
 		type = "optics",
 	},	
 	["slugs"] = {
-		printname = "Rifled Barrel(Slugs)",
-		cost = 299.95,
+		printname = "Slug Rounds",
+		cost = 250,
 		type = "ammo",
-	},
+    },
+    ["aim"] = {
+        printname = "Aimpoint",
+        cost = 500,
+        type = "optics",
+    },
 	["laser"] = {
 		printname = "Laser",
-		cost = 299.99,
+		cost = 300,
 		type = "light",
 	}
 }
@@ -96,18 +124,17 @@ GM.WeaponAttachments = {
 GM.ValidWeapons = table.Merge( table.Merge({},GM.PrimaryWeapons), GM.SecondaryWeapons )
 
 GM.Explosives = {}
-GM.Explosives["weapon_sh_grenade"] = { ammo=2, name="H.E. Grenade", price=1.99, model="models/weapons/w_eq_fraggrenade.mdl", cook=true,offset=Vector(-10,0.5,-5), fov=13 }
-GM.Explosives["weapon_sh_flash"] =   { ammo=2, name="Flash Bang", price=0.99, model="models/weapons/w_eq_flashbang.mdl", cook=true,offset=Vector(-10,0.5,-5), fov=17 }
-GM.Explosives["weapon_sh_c4"] =      { ammo=1, name="C4 Explosive", price=99.99, model="models/weapons/w_c4_planted.mdl", fov=20, ang=Angle(-30,145,0),offset=Vector(-40,-2,-20) }
-GM.Explosives["weapon_sh_drone"] =   { ammo=1, name="Assault Drone", price=99.99, model="models/stronghold/drone.mdl",offset=Vector(-60,0,-20), fov=20 }
+GM.Explosives["weapon_sh_grenade"] = { ammo=2, name="Hand Grenade", price=2, model="models/weapons/w_eq_fraggrenade.mdl", cook=true,offset=Vector(-10,0.5,-5), fov=13 }
+GM.Explosives["weapon_sh_flash"] =   { ammo=2, name="Flash Bang", price=1, model="models/weapons/w_eq_flashbang.mdl", cook=true,offset=Vector(-10,0.5,-5), fov=17 }
+GM.Explosives["weapon_sh_c4"] =      { ammo=1, name="C4 Explosive", price=100, model="models/weapons/w_c4_planted.mdl", fov=20, ang=Angle(-30,145,0),offset=Vector(-40,-2,-20) }
 
 GM.Ammo = {}
-GM.Ammo["buckshot"] = 	{ type="Normal", name="Shotgun Shells", price=0.99, model="models/Items/BoxBuckshot.mdl" }
+GM.Ammo["buckshot"] = 	{ type="Normal", name="Shotgun Shells", price=1, model="models/Items/BoxBuckshot.mdl" }
 GM.Ammo["ar2"] =      	{ type="Normal", name="Rifle Rounds", price=0.50, model="models/Items/BoxMRounds.mdl" }
 GM.Ammo["smg1"] =     	{ type="Normal", name="SMG Rounds", price=0.25, model="models/Items/BoxSRounds.mdl" }
 GM.Ammo["pistol"] =   	{ type="Normal", name="Pistol Rounds", price=0.1, model="models/Items/BoxSRounds.mdl" }
 GM.Ammo["battery"] =   	{ type="Normal", name="Charges", price=1, model="models/Items/battery.mdl" }
-GM.Ammo["rpg_round"] = 	{ type="Normal", name="RPG Rounds", price=19.99, model="models/Weapons/W_missile_closed.mdl" }
+GM.Ammo["rpg_round"] = 	{ type="Normal", name="RPG Rounds", price=20, model="models/Weapons/W_missile_closed.mdl" }
 
 GM.Hats = {}
 GM.Hats["bucket"] =       { name="Bucket", model="models/props_junk/MetalBucket01a.mdl", pos=Vector(1,0,3), ang=Angle(190,90,0), price=4.99 }
@@ -119,7 +146,10 @@ GM.Hats["bunny_ears"] =   { name="Bunny Ears", model="models/player/items/scout/
 GM.DonatorHats = {}
 GM.DonatorHats["crown"] = { name="Crown", model="models/player/items/demo/crown.mdl", pos=Vector(2,0,3), ang=Angle(40,0,0) }
 
-GM.ValidHats = table.Merge( table.Merge({},GM.Hats), GM.DonatorHats )
+GM.AdminHats ={}
+GM.AdminHats["crown"] = { name="Crown", model="models/player/items/demo/crown.mdl", pos=Vector(2,0,3), ang=Angle(40,0,0) }
+
+GM.ValidHats = table.Merge( table.Merge({},GM.Hats), GM.DonatorHats, GM.AdminHats )
 
 GM.DefaultPlayerModel = "models/player/Kleiner.mdl"
 
@@ -135,11 +165,18 @@ GM.PlayerModels = {
 	["kleiner"] = "models/player/Kleiner.mdl",
 	["scientist"] = "models/player/Kleiner.mdl",
 	["monk"] = "models/player/monk.mdl",		
-	["mossman"] = "models/player/mossman.mdl",	
+	["mossman"] = "models/player/mossman.mdl",
+	["mossmanarctic"] = "models/player/mossman_arctic.mdl",
 	["gina"] = "models/player/mossman.mdl",
 	["odessa"] = "models/player/odessa.mdl",		
-	["police"] = "models/player/police.mdl",		
+	["police"] = "models/player/police.mdl",	
+	["policefem"] = "models/player/police_fem.mdl",	
 	["stripped"] = "models/player/soldier_stripped.mdl",
+    ["chell"] = "models/player/p2_chell.mdl",
+	["magnusson"] = "models/player/magnusson.mdl",
+    
+    ["doda"] = "models/player/dod_german.mdl",
+    ["dodg"] = "models/player/dod_american.mdl",
 
 	["female7"] = "models/player/Group03/female_01.mdl",
 	["female8"] = "models/player/Group03/female_02.mdl",
@@ -157,6 +194,11 @@ GM.PlayerModels = {
 	["male17"] = "models/player/Group03/male_08.mdl",
 	["male18"] = "models/player/Group03/male_09.mdl",
 	
+    ["hostage01"] = "models/player/hostage/hostage_01.mdl",
+    ["hostage02"] = "models/player/hostage/hostage_02.mdl",
+    ["hostage03"] = "models/player/hostage/hostage_03.mdl",
+    ["hostage04"] = "models/player/hostage/hostage_04.mdl",
+    
 	["urban"] = "models/player/urban.mdl",
 	["swat"] = "models/player/swat.mdl",
 	["gasmask"] = "models/player/gasmask.mdl",
@@ -429,3 +471,13 @@ function UTIL_FormatTime( seconds, show_hours )
 	local s = math.floor( seconds % 60 )
 	return Format( "%d:%02d", m, s )
 end
+
+-- ---------------------------------------------------------------------------------------------------
+--Ragdoll remover (prevents clutter)
+timer.Create("sh_deleteragdolls",120,0,function()
+	for k, v in pairs(ents.FindByClass("prop_ragdoll")) do
+		if v:IsValid()
+			v:Remove()
+		end
+	end
+end)
