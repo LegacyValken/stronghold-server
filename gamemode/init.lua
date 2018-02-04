@@ -123,6 +123,12 @@ cvars.AddChangeCallback( "mp_timelimit",
 		end
 	end )
 
+-- Inflictors that don't cause props to make destruction sounds, mostly to prevent earrape
+local MuteInflictors = {
+        sent_rocket = true,
+        sent_c4 = true
+}
+
 -- Breakable Entities Info | Most of this is from FTS 1
 local BreakableEntities = { 
 	"prop_physics", 
@@ -544,6 +550,7 @@ end
 
 function GM:EntityTakeDamage( ent, dmginfo )
 	local attacker, inflictor, amount = dmginfo:GetAttacker(), dmginfo:GetInflictor(), dmginfo:GetDamage()
+        local infclass = inflictor:GetClass()
 	if attacker:IsPlayer() and attacker:GetGod() then
 		dmginfo:ScaleDamage( 0 )
 		return
@@ -600,7 +607,9 @@ function GM:EntityTakeDamage( ent, dmginfo )
 					ed:SetOrigin( pos )
 					ed:SetScale( 1 )
 				util.Effect( "HelicopterMegaBomb", ed ) 
-				sound.Play( "ambient/explosions/explode_7.wav", pos, 100, 100, 1 )
+                                if !MuteInflictors[infclass] then 
+				        sound.Play( "ambient/explosions/explode_7.wav", pos, 100, 100, 1 )
+                                end
 			else
 				local ed = EffectData()
 					ed:SetStart( pos )
@@ -647,6 +656,10 @@ end
 
 function GM:ShowSpare2( ply )
 	ply:ConCommand( "sh_options" )
+end
+
+function GM:EntityRemoved( ent )
+        ent:Extinguish()
 end
 
 local function ForceSave( ply )
